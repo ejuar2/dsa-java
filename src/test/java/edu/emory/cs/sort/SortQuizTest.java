@@ -25,11 +25,11 @@ public class SortQuizTest extends SortTest {
     @Test
     public void testRobustness() {
         testRobustness(new ShellSortQuiz<>());
-        //testRobustness(new RadixSortQuiz());
+        testRobustness(new RadixSortQuiz());
     }
     @Test
     public void testRuntime() {
         testRuntime(new ShellSortKnuth<>(), new ShellSortQuiz<>());
-        //testRuntime(new LSDRadixSort(), new RadixSortQuiz());
+        testRuntime(new LSDRadixSort(), new RadixSortQuiz());
     }
 }
