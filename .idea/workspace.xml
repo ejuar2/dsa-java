@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9796f52-db10-4f76-b3a4-db8b2d0a3f8e" name="Changes" comment="Quiz 2: Priority Queues">
+    <list default="true" id="b9796f52-db10-4f76-b3a4-db8b2d0a3f8e" name="Changes" comment="Quiz 3 Sorting algorithms Revision">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -52,23 +52,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Eric/IdeaProjects/dsa-java/src/main/java/edu/emory/cs/sort/hybrid",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Eric\IdeaProjects\dsa-java\src\main\java\edu\emory\cs\sort\hybrid" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Eric\IdeaProjects\dsa-java\src\main\java\edu\emory\cs\sort\hybrid" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.emory.cs.sort.hybrid" />
+    </key>
+  </component>
   <component name="RunManager">
+    <configuration name="HybridSortHW" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.emory.cs.sort.hybrid.HybridSortHW" />
+      <module name="dsa-java.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.emory.cs.sort.hybrid.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RadixSortQuiz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.emory.cs.sort.distribution.RadixSortQuiz" />
       <module name="dsa-java.main" />
@@ -153,6 +178,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HybridSortHW" />
         <item itemvalue="Gradle.SortQuizTest.testRobustness" />
         <item itemvalue="Application.RadixSortQuiz" />
         <item itemvalue="Gradle.SortQuizTest" />
@@ -179,7 +205,16 @@
       <workItem from="1676910847252" duration="2547000" />
       <workItem from="1676931877783" duration="10797000" />
       <workItem from="1677018628190" duration="12297000" />
-      <workItem from="1677034115479" duration="12343000" />
+      <workItem from="1677034115479" duration="12540000" />
+      <workItem from="1677082722627" duration="2625000" />
+      <workItem from="1677100127738" duration="7761000" />
+      <workItem from="1677264060950" duration="11786000" />
+      <workItem from="1677516484133" duration="2143000" />
+      <workItem from="1677691060793" duration="11939000" />
+      <workItem from="1677811219071" duration="649000" />
+      <workItem from="1677838912311" duration="17745000" />
+      <workItem from="1677894197684" duration="62199000" />
+      <workItem from="1678177852200" duration="20158000" />
     </task>
     <task id="LOCAL-00001" summary="Quiz 2: Priority Queues">
       <created>1676302334920</created>
@@ -188,7 +223,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676302334920</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Quiz 3 Sorting algorithms + Trees">
+      <created>1677081314803</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677081314803</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Quiz 3 Sorting algorithms Revision">
+      <created>1677081383335</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677081383335</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,7 +256,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Quiz 2: Priority Queues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Quiz 2: Priority Queues" />
+    <MESSAGE value="Quiz 3 Sorting algorithms + Trees" />
+    <MESSAGE value="Quiz 3 Sorting algorithms Revision" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quiz 3 Sorting algorithms Revision" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.StackOverflowError" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
