@@ -84,7 +84,7 @@ public class HybridSortTest {
         HybridSort<Integer> gold = new HybridSortBaseline<>();
         HybridSort<Integer> mine = new HybridSortHW<>();
 
-        int TEST = 0;
+        int TEST = 2;
 
         int row, col;
         if (TEST == 0) {
@@ -98,7 +98,7 @@ public class HybridSortTest {
                 System.out.println(join.toString());
             }
         }
-        else {
+        else if (TEST == 1) {
             double[] ratios = {0.00, 0.25, 0.50, 0.75, 1.0};
             for (double ratio: ratios) {
                 System.out.println("RATIO\t\tROW\tCOL\tGOLD\t\tROW\tCOL\tMINE");
@@ -113,6 +113,20 @@ public class HybridSortTest {
                         System.out.println(join.toString());
                     }
                     System.out.println();
+                }
+            }
+        }
+        else {
+            System.out.println("ROW\tCOL\tGOLD\t\tROW\tCOL\tMINE");
+            for (row = 200; row <= 1000; row += 200) {
+                for (col = 200; col <= 1000; col += 200) {    //
+                    long[] time = testSpeed2(row, col, gold, mine);
+                    StringJoiner join = new StringJoiner("\t");
+                    join.add(String.format("%d\t%d", row, col));
+                    join.add(Long.toString(time[0]));
+                    join.add(String.format("\t%d\t%d",row,col));
+                    join.add(Long.toString(time[1]));
+                    System.out.println(join.toString());
                 }
             }
         }
@@ -131,13 +145,6 @@ public class HybridSortTest {
         Integer[][] input, t;
         long st, et;
 
-//        for (int i = 0; i < warm; i++) {
-//            input = randomInput(row, col, ratio);
-//
-//            for (HybridSort<Integer> anEngine : engine)
-//                anEngine.sort(copyOf(input));
-//        }
-
         // Time benchmark between sorts occurs in this block
         // Time is summed over "iter" iterations of sorts
         for (int i = 0; i < iter; i++) {
@@ -151,10 +158,39 @@ public class HybridSortTest {
                 time[j] += et - st;
             }
         }
-
         return time;
     }
 
+    @SuppressWarnings("unchecked")
+    long[] testSpeed2(int row, int col, HybridSort<Integer>... engine) {
+        long[] time = new long[engine.length];
+        final int warm = 10, iter = 1000;
+        Integer[][] input, t;
+        long st, et;
+
+        // Time benchmark between sorts occurs in this block
+        // Time is summed over "iter" iterations of sorts
+        for (int i = 0; i < iter; i++) {
+            input = randomInput2(row, col);
+
+            for (int j = 0; j < engine.length; j++) {
+                t = copyOf(input);
+                st = System.currentTimeMillis();
+                engine[j].sort(t);
+                et = System.currentTimeMillis();
+                time[j] += et - st;
+            }
+        }
+        return time;
+    }
+    private Integer[][] randomInput2(int row, int col) {
+        Integer[][] input = new Integer[row][];
+
+        for (int i = 0; i < row; i++)
+            input[i] = randomArray(col, 0, null);
+
+        return input;
+    }
     private Integer[][] copyOf(Integer[][] input) {
         Integer[][] copy = new Integer[input.length][];
 
