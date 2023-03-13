@@ -35,6 +35,7 @@ public class TrieQuiz extends Trie<Integer> {
             return entities;
 
         // Two index pointers are used to track the existence of input.substring(s,i) within the trie
+        //      i starts at 0 because charAt(i) scans for chars at substring(i, i + 1)
         for (int i = 0, s = -1; i < input.length(); i++) {
             char c = input.charAt(i);
             node = node.getChild(c);

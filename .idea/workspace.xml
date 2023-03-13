@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9796f52-db10-4f76-b3a4-db8b2d0a3f8e" name="Changes" comment="Added BST, BBST, AVL, and RB tree implementations. Added quiz 4: a specific tree balancing assignment.">
+    <list default="true" id="b9796f52-db10-4f76-b3a4-db8b2d0a3f8e" name="Changes" comment="Added Trie implementations. Added quiz 5: search a string input for words in a Trie">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/emory/cs/trie/TrieQuiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/emory/cs/trie/TrieQuiz.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +83,7 @@
       <recent name="edu.emory.cs.sort.hybrid" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.HybridSortHW">
     <configuration name="HybridSortHW" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.emory.cs.sort.hybrid.HybridSortHW" />
       <module name="dsa-java.main" />
@@ -223,7 +224,8 @@
       <workItem from="1678269049532" duration="106000" />
       <workItem from="1678521194163" duration="639000" />
       <workItem from="1678541960593" duration="4232000" />
-      <workItem from="1678673220987" duration="25220000" />
+      <workItem from="1678673220987" duration="25250000" />
+      <workItem from="1678717881910" duration="105000" />
     </task>
     <task id="LOCAL-00001" summary="Quiz 2: Priority Queues">
       <created>1676302334920</created>
@@ -267,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678708969421</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added Trie implementations. Added quiz 5: search a string input for words in a Trie">
+      <created>1678717801019</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678717801019</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +300,8 @@
     <MESSAGE value="Code and data for homework 1 hybrid sort. Code for visualizations of hybrid sort data." />
     <MESSAGE value="New &quot;all random&quot; experiment and data for homework 1: hybrid sort" />
     <MESSAGE value="Added BST, BBST, AVL, and RB tree implementations. Added quiz 4: a specific tree balancing assignment." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added BST, BBST, AVL, and RB tree implementations. Added quiz 4: a specific tree balancing assignment." />
+    <MESSAGE value="Added Trie implementations. Added quiz 5: search a string input for words in a Trie" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Trie implementations. Added quiz 5: search a string input for words in a Trie" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
