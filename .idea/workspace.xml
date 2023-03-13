@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9796f52-db10-4f76-b3a4-db8b2d0a3f8e" name="Changes" comment="Code and data for homework 1 hybrid sort. Code for visualizations of hybrid sort data.">
+    <list default="true" id="b9796f52-db10-4f76-b3a4-db8b2d0a3f8e" name="Changes" comment="New &quot;all random&quot; experiment and data for homework 1: hybrid sort">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/emory/cs/sort/hybrid/data_visualization.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/emory/cs/sort/hybrid/data_visualization.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/emory/cs/sort/hybrid/sort_data_heatmaps.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/emory/cs/sort/hybrid/sort_data_heatmaps.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/emory/cs/sort/HybridSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/emory/cs/sort/HybridSortTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/emory/cs/tree/AbstractBinaryNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/emory/cs/tree/AbstractBinaryNode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +83,7 @@
       <recent name="edu.emory.cs.sort.hybrid" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HybridSortHW">
+  <component name="RunManager">
     <configuration name="HybridSortHW" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.emory.cs.sort.hybrid.HybridSortHW" />
       <module name="dsa-java.main" />
@@ -221,6 +219,12 @@
       <workItem from="1677894197684" duration="62199000" />
       <workItem from="1678177852200" duration="20419000" />
       <workItem from="1678240643578" duration="2566000" />
+      <workItem from="1678261772415" duration="193000" />
+      <workItem from="1678266467392" duration="20000" />
+      <workItem from="1678269049532" duration="106000" />
+      <workItem from="1678521194163" duration="639000" />
+      <workItem from="1678541960593" duration="4232000" />
+      <workItem from="1678673220987" duration="16291000" />
     </task>
     <task id="LOCAL-00001" summary="Quiz 2: Priority Queues">
       <created>1676302334920</created>
@@ -250,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678232072208</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="New &quot;all random&quot; experiment and data for homework 1: hybrid sort">
+      <created>1678261865500</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1678261865500</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +283,8 @@
     <MESSAGE value="Quiz 3 Sorting algorithms + Trees" />
     <MESSAGE value="Quiz 3 Sorting algorithms Revision" />
     <MESSAGE value="Code and data for homework 1 hybrid sort. Code for visualizations of hybrid sort data." />
-    <option name="LAST_COMMIT_MESSAGE" value="Code and data for homework 1 hybrid sort. Code for visualizations of hybrid sort data." />
+    <MESSAGE value="New &quot;all random&quot; experiment and data for homework 1: hybrid sort" />
+    <option name="LAST_COMMIT_MESSAGE" value="New &quot;all random&quot; experiment and data for homework 1: hybrid sort" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

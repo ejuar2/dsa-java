@@ -118,7 +118,7 @@ public abstract class AbstractBinaryNode<T extends Comparable<T>, N extends Abst
     protected void replaceParent(N node) {
         if (node != null) {
             if (node.hasParent()) node.getParent().replaceChild(node, null);
-            node.setParent((N)this); // an example of down casting being okay
+            node.setParent((N)this);
         }
     }
 
