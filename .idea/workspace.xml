@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9796f52-db10-4f76-b3a4-db8b2d0a3f8e" name="Changes" comment="Updated comment in quiz 5: Trie Quiz">
+    <list default="true" id="b9796f52-db10-4f76-b3a4-db8b2d0a3f8e" name="Changes" comment="Added test case (multiple same word) in quiz 5: Trie Quiz">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/emory/cs/trie/TrieQuizTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/emory/cs/trie/TrieQuizTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +16,16 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -80,37 +89,12 @@
       <recent name="C:\Users\Eric\IdeaProjects\dsa-java\src\main\java\edu\emory\cs\sort\hybrid\data" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.emory.cs.set" />
       <recent name="edu.emory.cs.sort.hybrid" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="HybridSortHW" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="edu.emory.cs.sort.hybrid.HybridSortHW" />
-      <module name="dsa-java.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.emory.cs.sort.hybrid.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RadixSortQuiz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="edu.emory.cs.sort.distribution.RadixSortQuiz" />
-      <module name="dsa-java.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.emory.cs.sort.distribution.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SortQuizTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GraphQuizTest.testQuiz" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -123,7 +107,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;edu.emory.cs.sort.SortQuizTest&quot;" />
+            <option value="&quot;edu.emory.cs.graph.GraphQuizTest.testQuiz&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -133,7 +117,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SortQuizTest.testRobustness" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GraphQuizTest.testQuiz0" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -146,7 +130,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;edu.emory.cs.sort.SortQuizTest.testRobustness&quot;" />
+            <option value="&quot;edu.emory.cs.graph.GraphQuizTest.testQuiz0&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -156,7 +140,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SortQuizTest.testRuntime" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GraphQuizTest.testQuiz1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -169,7 +153,53 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;edu.emory.cs.sort.SortQuizTest.testRuntime&quot;" />
+            <option value="&quot;edu.emory.cs.graph.GraphQuizTest.testQuiz1&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="GraphQuizTest.testQuiz2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;edu.emory.cs.graph.GraphQuizTest.testQuiz2&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="GraphQuizTest.testQuiz6" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;edu.emory.cs.graph.GraphQuizTest.testQuiz6&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -181,11 +211,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HybridSortHW" />
-        <item itemvalue="Gradle.SortQuizTest.testRobustness" />
-        <item itemvalue="Application.RadixSortQuiz" />
-        <item itemvalue="Gradle.SortQuizTest" />
-        <item itemvalue="Gradle.SortQuizTest.testRuntime" />
+        <item itemvalue="Gradle.GraphQuizTest.testQuiz1" />
+        <item itemvalue="Gradle.GraphQuizTest.testQuiz0" />
+        <item itemvalue="Gradle.GraphQuizTest.testQuiz2" />
+        <item itemvalue="Gradle.GraphQuizTest.testQuiz" />
+        <item itemvalue="Gradle.GraphQuizTest.testQuiz6" />
       </list>
     </recent_temporary>
   </component>
@@ -225,7 +255,12 @@
       <workItem from="1678521194163" duration="639000" />
       <workItem from="1678541960593" duration="4232000" />
       <workItem from="1678673220987" duration="25250000" />
-      <workItem from="1678717881910" duration="544000" />
+      <workItem from="1678717881910" duration="4034000" />
+      <workItem from="1678912300016" duration="15999000" />
+      <workItem from="1678999300826" duration="1000" />
+      <workItem from="1678999744789" duration="80000" />
+      <workItem from="1679153131319" duration="13000" />
+      <workItem from="1679243251004" duration="24428000" />
     </task>
     <task id="LOCAL-00001" summary="Quiz 2: Priority Queues">
       <created>1676302334920</created>
@@ -283,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678718018882</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added test case (multiple same word) in quiz 5: Trie Quiz">
+      <created>1678718434470</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1678718434470</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +351,8 @@
     <MESSAGE value="Added BST, BBST, AVL, and RB tree implementations. Added quiz 4: a specific tree balancing assignment." />
     <MESSAGE value="Added Trie implementations. Added quiz 5: search a string input for words in a Trie" />
     <MESSAGE value="Updated comment in quiz 5: Trie Quiz" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated comment in quiz 5: Trie Quiz" />
+    <MESSAGE value="Added test case (multiple same word) in quiz 5: Trie Quiz" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added test case (multiple same word) in quiz 5: Trie Quiz" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
