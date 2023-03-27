@@ -23,13 +23,15 @@ import java.util.stream.Stream;
 /** @author Jinho D. Choi */
 public class GraphQuiz extends Graph {
 
-    private List<List<Edge>> outgoingEdges = null;
+    private List<Deque<Edge>> outgoingEdges = null;
     public GraphQuiz(int size) { super(size); }
     public GraphQuiz(Graph g) { super(g); }
 
     /** @return the total number of cycles in this graph. */
+
+    /**
     public int numberOfCycles() {
-        outgoingEdges = getOutgoingEdgesList();
+        outgoingEdges = getOutgoingEdges();
         HashSet<HashSet<Integer>> cycleSet = new HashSet<>();
         for (int i = 0; i < size(); i++) {
             addCycles(i, cycleSet, new HashSet<>());
@@ -42,10 +44,13 @@ public class GraphQuiz extends Graph {
     private void addCycles(int target, HashSet<HashSet<Integer>> cycleSet, HashSet<Integer> cycle) {
         if (getIncomingEdges(target).size() == 0) return;
         if (outgoingEdges.get(target).size() == 0) return;
+        if (isHanging(cycle)) break;
 
         cycle.add(target);
         for (Edge edge: getIncomingEdges(target)) {
             HashSet<Integer> newCycle = new HashSet<>(cycle);
+
+
 
             boolean selfCycle = edge.getSource() == target;
             boolean isCycle = selfCycle || newCycle.contains(edge.getSource());
@@ -64,6 +69,8 @@ public class GraphQuiz extends Graph {
             else addCycles(edge.getSource(), cycleSet, newCycle);
         }
     }
+
+    private
 
     private HashSet<HashSet<Integer>> filterHangingCycles(HashSet<HashSet<Integer>> cycleSet) {
         HashSet<HashSet<Integer>> newCycleSet = new HashSet<>();
@@ -106,19 +113,7 @@ public class GraphQuiz extends Graph {
         }
         return true;
     }
-
-
-    private List<List<Edge>> getOutgoingEdgesList() {
-        List<List<Edge>> outgoing_edges = Stream.generate(ArrayList<Edge>::new).limit(size()).collect(Collectors.toList());
-
-        for (int target = 0; target < size(); target++) {
-            for (Edge incoming_edge : getIncomingEdges(target))
-                outgoing_edges.get(incoming_edge.getSource()).add(incoming_edge);
-        }
-
-        return outgoing_edges;
-    }
-
+     **/
 
 
 //    private boolean isCycle(HashSet<Edge> traversal) {
