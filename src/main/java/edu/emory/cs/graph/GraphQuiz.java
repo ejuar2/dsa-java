@@ -43,7 +43,7 @@ public class GraphQuiz extends Graph {
     /**
      * @return void     Cycles are added to cycleSet by using DFS to build a cycle
      *                      In this implementation, cycles are sets of edges
-     *                      Cycles are built if a starting node is encountered twice
+     *                      Cycles are built if the source node of an edge is equivalent to the start node
      * @param start     Initial node that is traversed
      * @param node      Current node that is being traversed
      * @param cycle     Set of visited edges
