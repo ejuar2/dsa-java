@@ -16,115 +16,67 @@
 package edu.emory.cs.graph;
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 /** @author Jinho D. Choi */
 public class GraphQuiz extends Graph {
+    HashSet<HashSet<Edge>> cycleSet = null;
+    List<Deque<Edge>> outgoingEdges = null;
+    List<Boolean> isAcyclicList = null;
 
-    private List<Deque<Edge>> outgoingEdges = null;
-    public GraphQuiz(int size) { super(size); }
-    public GraphQuiz(Graph g) { super(g); }
-
-    /** @return the total number of cycles in this graph. */
+    public GraphQuiz(int size) {super(size);}
+    public GraphQuiz(Graph g) {super(g);}
 
     /**
-    public int numberOfCycles() {
-        outgoingEdges = getOutgoingEdges();
-        HashSet<HashSet<Integer>> cycleSet = new HashSet<>();
-        for (int i = 0; i < size(); i++) {
-            addCycles(i, cycleSet, new HashSet<>());
-        }
-        cycleSet = filterHangingCycles(cycleSet);
-        cycleSet = filterAtomicCycles(cycleSet);
-        return cycleSet.size();
+     * @return int     The total number of cycles in this graph
+     */
+    public int numberOfCycles() { //                                                             [Function RT: O(V^3)]
+        cycleSet = new HashSet<>(); // initialize global variable that stores cycles in this graph
+        outgoingEdges = getOutgoingEdges(); // initialize global variable that stores outgoing edges        [RT: O(E)]
+        isAcyclicList = getAcyclicNodes(); // initialize global variable that stores if a node is acyclic   [RT: O(V)]
+
+        for (int node = 0; node < size(); node++) // each node in the graph is traversed for cycles         [RT: O(V)]
+            if (!isAcyclicList.get(node)) // acyclic nodes are not traversed                                [RT: O(1)]
+                addCycles(node, node, new HashSet<>(), new HashSet<>()); //                               [RT: O(V^2)]
+        return cycleSet.size(); // the size of the cycle set represents the number of cycles in the graph
     }
 
-    private void addCycles(int target, HashSet<HashSet<Integer>> cycleSet, HashSet<Integer> cycle) {
-        if (getIncomingEdges(target).size() == 0) return;
-        if (outgoingEdges.get(target).size() == 0) return;
-        if (isHanging(cycle)) break;
-
-        cycle.add(target);
-        for (Edge edge: getIncomingEdges(target)) {
-            HashSet<Integer> newCycle = new HashSet<>(cycle);
-
-
-
-            boolean selfCycle = edge.getSource() == target;
-            boolean isCycle = selfCycle || newCycle.contains(edge.getSource());
-            boolean isNewCycle = !cycleSet.contains(newCycle);
-
-            if (isCycle) {
-                if (isNewCycle) {
-                    for (Integer i: newCycle) {
-                        System.out.print(i + " ");
-                    }
-                    System.out.println();
-                    cycleSet.add(newCycle);
-                }
-                else return;
-            }
-            else addCycles(edge.getSource(), cycleSet, newCycle);
-        }
-    }
-
-    private
-
-    private HashSet<HashSet<Integer>> filterHangingCycles(HashSet<HashSet<Integer>> cycleSet) {
-        HashSet<HashSet<Integer>> newCycleSet = new HashSet<>();
-
-        for (HashSet<Integer> cycle: cycleSet) {
-            for (Integer target: cycle) {
-                if (!isHangingNode(target, cycle))
-                    newCycleSet.add(cycle);
-            }
-        }
-
-        return newCycleSet;
-    }
-
-    private boolean isHangingNode(int target, HashSet<Integer> cycle) {
-        for (Edge edge: getIncomingEdges(target)) {
-            if (!cycle.contains(edge.getTarget())) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private HashSet<HashSet<Integer>> filterAtomicCycles(HashSet<HashSet<Integer>> cycleSet) {
-        HashSet<HashSet<Integer>> newCycleSet = new HashSet<>();
-
-        for (HashSet<Integer> cycle: cycleSet) {
-            if (isAtomicCycle(cycle, cycleSet)) {
-                newCycleSet.add(cycle);
-            }
-        }
-
-        return newCycleSet;
-    }
-
-    private boolean isAtomicCycle(HashSet<Integer> test, HashSet<HashSet<Integer>> cycleSet) {
-        for (HashSet<Integer> cycle: cycleSet) {
-            if (!test.equals(cycle) && test.containsAll(cycle))
-                return false;
-        }
-        return true;
-    }
+    /**
+     * @return void     Cycles are added to cycleSet by using DFS to build a cycle
+     *                      In this implementation, cycles are sets of edges
+     *                      Cycles are built if a starting node is encountered twice
+     * @param start     Initial node that is traversed
+     * @param node      Current node that is being traversed
+     * @param cycle     Set of visited edges
+     * @param visited   Set of visited vertices
      **/
+    private void addCycles(int start, int node, Set<Edge> cycle, Set<Integer> visited) { //      [Function RT: O(V^2)]
+        if (visited.contains(node)) return; // base case to end DFS traversal                               [RT: O(1)]
+        visited.add(node); // traversed nodes are stored in the set of visited nodes                        [RT: O(1)]
 
+        for (Edge edge: getIncomingEdges(node)) { // a node's incoming edges are traversed                  [RT: O(V)]
+            if (isAcyclicList.get(edge.getSource())) continue; // acyclic nodes are not traversed           [RT: O(1)]
 
-//    private boolean isCycle(HashSet<Edge> traversal) {
-//        HashSet<Integer> visited = new HashSet<>();
-//        for (Edge edge: traversal) {
-//            if (visited.size() == 0) visited.add(edge.getSource());
-//            if (visited.contains(edge.getTarget())) return true;
-//            else visited.add(edge.getTarget());
-//        }
-//        return false;
-//    }
+            HashSet<Edge> newCycle = new HashSet<>(cycle);
+            newCycle.add(edge); // edges are added to the set of cycle as a candidate for a new cycle       [RT: O(1)]
 
+            if (edge.getSource() != start) // cycle is built once starting node is reached                  [RT: O(1)]
+                addCycles(start, edge.getSource(), newCycle, new HashSet<>(visited)); // can only be iterated V times
+            else if (!cycleSet.contains(newCycle)) // adds cycle to cycleSet only if it is a new cycle      [RT: O(1)]
+                cycleSet.add(newCycle); //                                                                  [RT: O(1)]
+        }
+    }
 
+    /**
+     * @return List     Traverses vertices in graph and stores if vertex is acyclic or not
+     **/
+    private List<Boolean> getAcyclicNodes(){ //                                                    [Function RT: O(V)]
+        List<Boolean> acyclicNodes = new ArrayList<>();
+        for (int node = 0; node < size(); node++) //                                                        [RT: O(V)]
+            // node is acyclic if it does not contain at least one incoming edge and at least one outgoing edge
+            if (getIncomingEdges(node).size() * outgoingEdges.get(node).size() == 0) //                     [RT: O(1)]
+                acyclicNodes.add(true); // node is acyclic                                                  [RT: O(1)]
+            else
+                acyclicNodes.add(false); // node is not acyclic                                             [RT: O(1)]
+        return acyclicNodes;
+    }
 }
