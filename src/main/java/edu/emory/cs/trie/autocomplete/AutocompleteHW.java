@@ -42,7 +42,7 @@ public class AutocompleteHW extends Autocomplete<List<String>> {
     public List<String> getCandidates(String prefix) {
         // Edge case handling
         TrieNode<List<String>> node = find(prefix);
-        if (node == null || prefix.length() == 0 || getMax() == 0)
+        if (node == null || getMax() == 0)
             return new ArrayList<>();
 
         List<String> metaData = node.getValue(); // the list of candidates at a node is returned
@@ -101,8 +101,8 @@ public class AutocompleteHW extends Autocomplete<List<String>> {
     @Override
     public void pickCandidate(String prefix, String candidate) {
         // trailing spaces are removed
-        prefix = prefix.trim();
-        candidate = candidate.trim();
+        if (prefix != null) prefix = prefix.trim();
+        if (candidate != null) candidate = candidate.trim();
 
         TrieNode<List<String>> node = find(prefix);
 
@@ -115,6 +115,7 @@ public class AutocompleteHW extends Autocomplete<List<String>> {
         if (find(candidate) == null)
             put(candidate, null); // candidate is inserted in trie if it does not exist
 
+        find(candidate).setEndState(true);
         List<String> metadata = node.getValue();
         List<String> candidateList = (metadata != null) ? metadata : new ArrayList<>();
         insertCandidate(candidateList, candidate); // metadata for the prefix is updated
