@@ -35,17 +35,17 @@ public class MSTPrim implements MST {
         Edge edge;
 
         // add all connecting vertices from start vertex to the queue
-        add(queue, visited, graph, 0);
+        add(queue, visited, graph, 0);                                                        // RT: O(V)
 
-        while (!queue.isEmpty()) {
-            edge = queue.poll();
+        while (!queue.isEmpty()) {                                                      // Loop repeats E times
+            edge = queue.poll();                                                                    // RT: O(1)
 
-            if (!visited.contains(edge.getSource())) {
-                tree.addEdge(edge);
+            if (!visited.contains(edge.getSource())) {                                              // RT: O(1)
+                tree.addEdge(edge);                                                                 // RT: O(1)
                 // if a spanning tree is found, break.
-                if (tree.size() + 1 == graph.size()) break;
+                if (tree.size() + 1 == graph.size()) break;                                         // RT: O(1)
                 // add all connecting vertices from current vertex to the queue
-                add(queue, visited, graph, edge.getSource());
+                add(queue, visited, graph, edge.getSource());                                       // RT: O(V)
             }
         }
 
@@ -59,11 +59,11 @@ public class MSTPrim implements MST {
      * @param graph   the graph to find the minimum spanning tree from.
      * @param target  the target vertex to be added.
      */
-    private void add(PriorityQueue<Edge> queue, Set<Integer> visited, Graph graph, int target) {
-        visited.add(target);
-        for (Edge edge : graph.getIncomingEdges(target)) {
-            if (!visited.contains(edge.getSource()))
-                queue.add(edge);
+    private void add(PriorityQueue<Edge> queue, Set<Integer> visited, Graph graph, int target) {    // Function RT: O(V)
+        visited.add(target);                                                                    // HashSet.add RT: O(1)
+        for (Edge edge : graph.getIncomingEdges(target)) {                                      // loop traversal RT: O(V)
+            if (!visited.contains(edge.getSource()))                                            // HashSet.contains RT: O(1)
+                queue.add(edge);                                                                // PriorityQ RT: O(logE)
         }
 
 //        graph.getIncomingEdges(target).stream().

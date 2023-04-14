@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9796f52-db10-4f76-b3a4-db8b2d0a3f8e" name="Changes" comment="Added disjoint sets and graphs packages. Added quiz 6">
+    <list default="true" id="b9796f52-db10-4f76-b3a4-db8b2d0a3f8e" name="Changes" comment="Edited HW2 AutocompleteHW">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/emory/cs/graph/GraphQuiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/emory/cs/graph/GraphQuiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/emory/cs/graph/GraphQuizTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/emory/cs/graph/GraphQuizTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/emory/cs/graph/span/MSTPrim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/emory/cs/graph/span/MSTPrim.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/emory/cs/graph/span/SpanningTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/emory/cs/graph/span/SpanningTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/emory/cs/trie/autocomplete/AutocompleteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/emory/cs/trie/autocomplete/AutocompleteTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,8 +101,8 @@
       <recent name="edu.emory.cs.sort.hybrid" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.AutocompleteTest.test">
-    <configuration name="AutocompleteTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager">
+    <configuration name="GraphQuizTest.testQuiz" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -114,7 +115,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;edu.emory.cs.trie.autocomplete.AutocompleteTest.test&quot;" />
+            <option value="&quot;edu.emory.cs.graph.GraphQuizTest.testQuiz&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -170,7 +171,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SuperAutocompleteTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GraphQuizTest.testQuiz2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -183,7 +184,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;edu.emory.cs.trie.autocomplete.SuperAutocompleteTest&quot;" />
+            <option value="&quot;edu.emory.cs.graph.GraphQuizTest.testQuiz2&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -193,7 +194,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SuperAutocompleteTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GraphQuizTest.testQuiz3" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -206,7 +207,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;edu.emory.cs.trie.autocomplete.SuperAutocompleteTest.test&quot;" />
+            <option value="&quot;edu.emory.cs.graph.GraphQuizTest.testQuiz3&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -218,11 +219,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.AutocompleteTest.test" />
-        <item itemvalue="Gradle.SuperAutocompleteTest" />
-        <item itemvalue="Gradle.SuperAutocompleteTest.test" />
-        <item itemvalue="Gradle.GraphQuizTest.testQuiz1" />
+        <item itemvalue="Gradle.GraphQuizTest.testQuiz" />
         <item itemvalue="Gradle.GraphQuizTest.testQuiz0" />
+        <item itemvalue="Gradle.GraphQuizTest.testQuiz3" />
+        <item itemvalue="Gradle.GraphQuizTest.testQuiz2" />
+        <item itemvalue="Gradle.GraphQuizTest.testQuiz1" />
       </list>
     </recent_temporary>
   </component>
@@ -275,7 +276,21 @@
       <workItem from="1679769102477" duration="33612000" />
       <workItem from="1679816381483" duration="34000" />
       <workItem from="1679843034886" duration="22828000" />
-      <workItem from="1679922273075" duration="7425000" />
+      <workItem from="1679922273075" duration="7519000" />
+      <workItem from="1680025548736" duration="5823000" />
+      <workItem from="1680486251669" duration="600000" />
+      <workItem from="1680553639196" duration="19827000" />
+      <workItem from="1680613080497" duration="113000" />
+      <workItem from="1680640512339" duration="1670000" />
+      <workItem from="1680658329422" duration="15927000" />
+      <workItem from="1680711865128" duration="497000" />
+      <workItem from="1680822489291" duration="3000" />
+      <workItem from="1680989591148" duration="1137000" />
+      <workItem from="1680991367823" duration="670000" />
+      <workItem from="1681017345646" duration="624000" />
+      <workItem from="1681109820549" duration="7052000" />
+      <workItem from="1681426280855" duration="12726000" />
+      <workItem from="1681501530632" duration="1618000" />
     </task>
     <task id="LOCAL-00001" summary="Quiz 2: Priority Queues">
       <created>1676302334920</created>
@@ -354,7 +369,42 @@
       <option name="project" value="LOCAL" />
       <updated>1679319820244</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added homework 2: autocomplete to the trie package. Edited graph quiz.">
+      <created>1679929780757</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1679929780758</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Updated quiz 7: number of cycles in a directed graph (GraphQuiz and GraphQuizTest)">
+      <created>1680672150572</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1680672150572</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Corrected comment in GraphQuiz">
+      <created>1680679208111</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1680679208111</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added 11 files for chapter 8 spanning trees">
+      <created>1680991425363</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1680991425363</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Edited HW2 AutocompleteHW">
+      <created>1681503145515</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1681503145515</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,7 +432,12 @@
     <MESSAGE value="Updated comment in quiz 5: Trie Quiz" />
     <MESSAGE value="Added test case (multiple same word) in quiz 5: Trie Quiz" />
     <MESSAGE value="Added disjoint sets and graphs packages. Added quiz 6" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added disjoint sets and graphs packages. Added quiz 6" />
+    <MESSAGE value="Added homework 2: autocomplete to the trie package. Edited graph quiz." />
+    <MESSAGE value="Updated quiz 7: number of cycles in a directed graph (GraphQuiz and GraphQuizTest)" />
+    <MESSAGE value="Corrected comment in GraphQuiz" />
+    <MESSAGE value="Added 11 files for chapter 8 spanning trees" />
+    <MESSAGE value="Edited HW2 AutocompleteHW" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited HW2 AutocompleteHW" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

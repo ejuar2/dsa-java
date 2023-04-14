@@ -105,6 +105,12 @@ public class AutocompleteTest {
         ac.pickCandidate(prefix, candidate);
         testGetCandidates(ac, eval, "zebra", expected);
 
+//        expected = List.of();
+//        prefix = "";
+//        candidate = null;
+//        ac.pickCandidate(prefix, candidate);
+//        testGetCandidates(ac, eval, "", expected);
+
         System.out.printf("Score: %d/%d\n", eval.correct, eval.total);
     }
 

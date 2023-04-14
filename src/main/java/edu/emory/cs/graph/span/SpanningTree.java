@@ -163,7 +163,8 @@ public class SpanningTree implements Comparable<SpanningTree> {
 
             if (tmp != null) {
                 tmp.removeAll(cycle);
-                if (tmp.isEmpty()) map.remove(source);
+                if (tmp.isEmpty())
+                    map.remove(source);
             }
         }
     }
