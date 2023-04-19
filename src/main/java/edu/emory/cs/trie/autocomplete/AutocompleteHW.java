@@ -41,9 +41,12 @@ public class AutocompleteHW extends Autocomplete<List<String>> {
     @Override
     public List<String> getCandidates(String prefix) {
         // Edge case handling
+        prefix = prefix.trim();
+
         TrieNode<List<String>> node = find(prefix);
         if (node == null || getMax() == 0)
             return new ArrayList<>();
+
 
         List<String> metaData = node.getValue(); // the list of candidates at a node is returned
         List<String> candidateList = (metaData != null) ? new ArrayList<>(metaData) : new ArrayList<>();

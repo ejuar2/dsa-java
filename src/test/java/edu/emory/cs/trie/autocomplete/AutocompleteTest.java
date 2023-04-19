@@ -160,6 +160,10 @@ public class AutocompleteTest {
         expected = List.of();
         testGetCandidates(ac, eval, prefix, expected);
 
+        prefix = "      ";
+        expected = List.of();
+        testGetCandidates(ac, eval, prefix, expected);
+
         prefix = "zebr";
         expected = List.of("zebra", "zebras", "zebraic", "zebrass", "zebrina", "zebrine", "zebroid", "zebrula", "zebrule", "zebrinny", "zebrafish", "zebralike", "zebrasses", "zebrawood", "zebrinnies", "zebrafishes");
         testGetCandidates(ac, eval, prefix, expected);
