@@ -38,7 +38,7 @@ public class MSTAllHWTest {
         }
     }
 
-    //	@Test
+    @Test
     public void test() {
         List<Graph> graphs = new ArrayList<>();
         graphs.add(getGraph1a());
@@ -53,22 +53,27 @@ public class MSTAllHWTest {
 
         int i, correct = 0, total = graphs.size();
         MSTAll gold = new MSTAllHW();
-        MSTAll system = new MSTAllHW();
+        MSTAll mine = new MSTAllHW();
         Graph graph;
         boolean b;
 
         for (i = 0; i < total; i++) {
             graph = graphs.get(i);
             b = false;
-
+            List<SpanningTree> myTrees = null; 
+            
             try {
-                if (test(gold.getMinimumSpanningTrees(graph), system.getMinimumSpanningTrees(graph))) {
+                myTrees = mine.getMinimumSpanningTrees(graph);
+                if (test(gold.getMinimumSpanningTrees(graph), myTrees)) {
                     b = true;
                     correct++;
                 }
             } catch (Exception ignored) {}
 
             System.out.printf("%2d: %b\n", (i + 1), b);
+            System.out.println(myTrees);
+            System.out.println(myTrees.size());
+            System.out.println();
         }
 
         System.out.printf("Score: %d/%d\n", correct, total);

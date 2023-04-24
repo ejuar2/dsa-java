@@ -38,10 +38,12 @@ public class MinimumSpanningTreeTest {
         MST kruskal = new MSTKruskal();
         SpanningTree tree;
 
+        System.out.println("A");
         tree = prim.getMinimumSpanningTree(graph);
         System.out.println(tree);
         System.out.println(tree.getTotalWeight());
 
+        System.out.println("B");
         tree = kruskal.getMinimumSpanningTree(graph);
         System.out.println(tree);
         System.out.println(tree.getTotalWeight());
@@ -71,10 +73,10 @@ public class MinimumSpanningTreeTest {
         graph.setDirectedEdge(2, 4, 6);
         graph.setDirectedEdge(4, 4, 20);
 
+        System.out.println("C");
         MSTEdmonds mst = new MSTEdmonds();
         SpanningTree tree = mst.getMinimumSpanningTree(graph);
         System.out.println(tree.toString());
-
         graph = new Graph(4);
 
         graph.setDirectedEdge(0, 1, 4);
@@ -84,6 +86,7 @@ public class MinimumSpanningTreeTest {
         graph.setDirectedEdge(2, 1, 2);
         graph.setDirectedEdge(3, 2, 3);
 
+        System.out.println("D");
         tree = mst.getMinimumSpanningTree(graph);
         System.out.println(tree.toString());
     }

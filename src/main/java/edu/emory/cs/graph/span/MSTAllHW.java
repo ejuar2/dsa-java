@@ -19,218 +19,81 @@ import edu.emory.cs.graph.Edge;
 import edu.emory.cs.graph.Graph;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /** @author Jinho D. Choi */
 public class MSTAllHW implements MSTAll {
-    //    class Subtree {
-//        PriorityQueue<Edge> queue;
-//        Set<Integer> visited;
-//        Set<Edge> edges;
-//    }
+    private Graph graph;
+    private double weightMST;
+    private List<SpanningTree> treeList;
 
+    /**
+     * @param graph     undirected graph represented with bidirectional edges
+     * @return          returns a list of minimum spanning trees
+     */
     @Override
     public List<SpanningTree> getMinimumSpanningTrees(Graph graph) {
-        Set<Set<Edge>> treeSet = new HashSet<>();
+        // global variable instantiation
+        this.graph = graph;
+        treeList = new ArrayList<>();
 
-        Deque<Integer> nodeStack = new ArrayDeque<>();
-        Deque<Set<Integer>> visitedStack = new ArrayDeque<>();
-        Deque<Set<Edge>> treeStack = new ArrayDeque<>();
+        // weight of the graph's MST is calculated with Kruskal's algorithm
+        MSTKruskal kruskal = new MSTKruskal();
+        weightMST = kruskal.getMinimumSpanningTree(graph).getTotalWeight();
 
-        int target = 0;
+        PriorityQueue<Edge> edgeHeap = new PriorityQueue<>();
         Set<Integer> visited = new HashSet<>();
-        Set<Edge> tree = new HashSet<>();
 
-        nodeStack.offerLast(target);
-        visitedStack.offerLast(visited);
-        treeStack.offerLast(tree);
+        // populate edgeHeap PQ and visited set with initial values starting on root node
+        add(edgeHeap, visited, 0);
 
-        while (!nodeStack.isEmpty()) {
-            target = nodeStack.pollLast();
-            visited = visitedStack.pollLast();
-            tree = treeStack.pollLast();
+        // recursively populate the treeList with MSTs
+        addMinimumSpanningTrees(edgeHeap, visited, new SpanningTree());
 
-            if (tree.size() + 1 == graph.size()) {
-                treeSet.add(tree);
-                continue;
-            }
-            if (visited.contains(target)) continue;
-            visited.add(target);
-
-            // Set<Edge> edgeSet = new HashSet<>(); // replace with pqueue
-            Queue<Edge> nextEdge = new PriorityQueue<>();
-            for (int node : visited)
-                for (Edge edge : graph.getIncomingEdges(node))
-                    if (!visited.contains(edge.getSource()))
-                        nextEdge.add(edge);
-
-
-            double minWeight = nextEdge.peek().getWeight();
-
-            Edge edge;
-            Set<Edge> newTree;
-
-            while (nextEdge.size() > 0 && nextEdge.peek().getWeight() == minWeight) {
-                edge = nextEdge.poll();
-                newTree = new HashSet<>(tree);
-                newTree.add(edge);
-
-                nodeStack.offerLast(edge.getSource());
-                visitedStack.offerLast(new HashSet<>(visited));
-                treeStack.offerLast(newTree);
-            }
-        }
-
-        List<SpanningTree> treeList = new ArrayList<>();
-        for (Set<Edge> t: treeSet) {
-            SpanningTree st = new SpanningTree();
-            for (Edge e: t) st.addEdge(e);
-            treeList.add(st);
-        }
         return treeList;
     }
 
+    /**
+     * Searches for spanning trees and adds spanning tree with weight of minimum spanning tree to list of MSTs
+     * @param edgeHeap  priority queue of edges used to find local optimum edge to add
+     * @param visited   set of nodes that have been visited in a traversal
+     * @param tree      spanning tree that is being constructed
+     */
+    private void addMinimumSpanningTrees(PriorityQueue<Edge> edgeHeap, Set<Integer> visited, SpanningTree tree) {
+        if (tree.size() + 1 == graph.size()) { // Spanning tree is completed once every node has been visited
+            if (tree.getTotalWeight() == weightMST)
+                treeList.add(tree); // If the spanning tree has weight of MST, it is added to treeList
+            return;
+        }
+        if (edgeHeap.isEmpty()) return; // end traversal if empty edgeHeap
 
+        Edge edge = edgeHeap.poll(); // evaluate path with new edge
+        if (!visited.contains(edge.getSource())) { // prevents traversal of cycle
+            // set up traversal of a new MST path without overwriting future backtracking paths
+            PriorityQueue<Edge> newEdgeHeap = new PriorityQueue<>(edgeHeap); // copy of edgeHeap for backtracking
+            add(newEdgeHeap, visited, edge.getSource());
+            SpanningTree newTree = new SpanningTree(tree);
+            newTree.addEdge(edge);
+            // new MST path is searched from tree with new added edge
+            addMinimumSpanningTrees(newEdgeHeap, visited, newTree);
+            visited.remove(edge.getSource()); // remove previous visited node for backtracking
+        }
+        // backtracking of new possible MST path
+        if (!edgeHeap.isEmpty() && edgeHeap.peek().getWeight() == edge.getWeight())
+            addMinimumSpanningTrees(edgeHeap, visited, tree);
+    }
 
-//    @Override
-//    public List<SpanningTree> getMinimumSpanningTrees(Graph graph) {
-//        this.graph = graph;
-//        treeSet = new HashSet<>();
-//        addTrees(0, new HashSet<>(), new HashSet<>());
-//
-//        List<SpanningTree> treeList = new ArrayList<>();
-//        for (Set<Edge> tree: treeSet) {
-//            SpanningTree st = new SpanningTree();
-//            for (Edge e: tree) st.addEdge(e);
-//            treeList.add(st);
-//        }
-//        return treeList;
-//    }
-//    private void addTrees2(int target, Set<Integer> visited, Set<Edge> tree) {
-//        if (tree.size() + 1 == graph.size()) {
-//            treeSet.add(tree);
-//            return;
-//        }
-//        if (visited.contains(target)) return;
-//        visited.add(target);
-//
-//        Set<Edge> edgeSet = new HashSet<>();
-//        for (int node: visited)
-//            for (Edge edge: graph.getIncomingEdges(node))
-//                if (!visited.contains(edge.getSource()))
-//                    edgeSet.add(edge);
-//
-//        Queue<Edge> nextEdge = new PriorityQueue<>(edgeSet);
-//        double minWeight = nextEdge.peek().getWeight();
-//
-//        Edge edge;
-//        Set<Edge> newTree;
-//
-//        while (nextEdge.size() > 0 && nextEdge.peek().getWeight() == minWeight) {
-//            edge = nextEdge.poll();
-//            newTree = new HashSet<>(tree);
-//            newTree.add(edge);
-//
-//            addTrees2(edge.getSource(), new HashSet<>(visited), newTree);
-//        }
-//    }
-
-
-
-    /*
-     *
-     * 1. PriorityQueue(root.edges())
-     * 2. Do prims
-     *
-     * while (heap.notEmpty()) {
-     *   val weight = heap.peek().weight;
-     *
-     *   do {
-     *       heap.poll();
-     *   } while(heap.peek() == weight);
-     * }
-     *
-     *
-     *
-     * */
-
-
-//    class Subtree {
-//        PriorityQueue<Edge> queue;
-//        Set<Integer> visited;
-//        Set<Edge> edges;
-//    }
-
-//    @Override
-//    public List<SpanningTree> getMinimumSpanningTrees(Graph graph) {
-//        this.graph = graph;
-//        Set<SpanningTree> treeSet = new HashSet<>();
-//
-//        Deque<Set<Edge>> treeDeque = new ArrayDeque<>();
-//        Deque<Set<Integer>> visitedDeque = new ArrayDeque<>();
-//        Deque<PriorityQueue<Edge>> nextEdgeDeque = new ArrayDeque<>();
-//
-//        Set<Integer> visited = new HashSet<>();
-//        Set<Integer> newVisited;
-//
-//        Set<Edge> tree;
-//
-//        visited.add(0);
-//        PriorityQueue<Edge> nextEdge = new PriorityQueue<>(graph.getIncomingEdges(0));
-//        double min = nextEdge.peek().getWeight();
-//
-//        for (Edge edge : nextEdge) {
-//            if (!visited.contains(edge.getSource()) && edge.getWeight() == min) {
-//                newVisited = new HashSet<>(visited);
-//                newVisited.add(edge.getSource());
-//                visitedDeque.offer(newVisited);
-//
-//                tree = new HashSet<>();
-//                tree.add(edge);
-//                treeDeque.offer(tree);
-//            }
-//        }
-//
-//        while(!treeDeque.isEmpty()) {
-//
-//        }
-//        return null;
-//    }
-
-
-
-    //////////////////////////////////
-
-//    private void addTree(int node, Set<Edge> tree, Set<Integer> visited) {
-//        if (visited.contains(node)) return;
-//        if (tree.size() + 1 == graph.size()) {
-//            treeSet.add(tree);
-//            return;
-//        }
-//        visited.add(node);
-//
-//        Queue<Edge> edgeQueue = new PriorityQueue<>(outgoingEdges.get(node)); // outgoing edges
-//        double minWeight = edgeQueue.peek().getWeight();
-//
-//        while (!edgeQueue.isEmpty()) {
-//            Edge edge = edgeQueue.poll();
-//            if (edge.getWeight() == minWeight) {
-//                // replace set of edges with Spanning tree
-//                Set<Edge> newTree = new HashSet<>();
-//                newTree.add(edge); // new tree with edge
-//                addTree(edge.getSource(), new HashSet<>(newTree), new HashSet<>(visited));
-//            }
-//        }
-//    }
-//
-//    private void add(PriorityQueue<Edge> queue, Set<Integer> visited, Graph graph, int target) {    // Function RT: O(V)
-//        visited.add(target);                                                                    // HashSet.add RT: O(1)
-//        for (Edge edge : graph.getIncomingEdges(target)) {                                      // loop traversal RT: O(V)
-//            if (!visited.contains(edge.getSource()))                                            // HashSet.contains RT: O(1)
-//                queue.add(edge);                                                                // PriorityQ RT: O(logE)
-//        }
-//    }
-//
-
+    /**
+     * Adds the target to the visited set, and adds the incoming edges of the target vertex that have not been visited to the edgeHeap.
+     * @param edgeHeap   priority queue of incoming edges to explore.
+     * @param visited set of visited vertices.
+     * @param target  the target vertex to be added.
+     */
+    private void add(PriorityQueue<Edge> edgeHeap, Set<Integer> visited, int target) {
+        visited.add(target);
+        graph.getIncomingEdges(target).stream()
+                .filter(edge -> !visited.contains(edge.getSource()))
+                .collect(Collectors.toCollection(() -> edgeHeap));
+    }
 }
-
 
