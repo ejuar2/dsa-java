@@ -16,6 +16,7 @@
 package edu.emory.cs.graph;
 
 import java.util.*;
+import java.util.stream.IntStream;
 
 /** @author Jinho D. Choi */
 public class GraphQuiz extends Graph {
@@ -32,7 +33,11 @@ public class GraphQuiz extends Graph {
     public int numberOfCycles() { //                                                             [Function RT: O(V^3)]
         cycleSet = new HashSet<>(); // initialize global variable that stores cycles in this graph
         outgoingEdges = getOutgoingEdges(); // initialize global variable that stores outgoing edges        [RT: O(E)]
-        isAcyclicList = getAcyclicNodes(); // initialize global variable that stores if a node is acyclic   [RT: O(V)]
+        isAcyclicList = IntStream.range(0, size())
+                .mapToObj(node -> getIncomingEdges(node).size() * outgoingEdges.get(node).size() == 0)
+                .toList();
+
+        // isAcyclicList = getAcyclicNodes(); // initialize global variable that stores if a node is acyclic   [RT: O(V)]
 
         for (int node = 0; node < size(); node++) // each node in the graph is traversed for cycles         [RT: O(V)]
             if (!isAcyclicList.get(node)) // acyclic nodes are not traversed                                [RT: O(1)]
@@ -69,14 +74,15 @@ public class GraphQuiz extends Graph {
     /**
      * @return List     Traverses vertices in graph and stores if vertex is acyclic or not
      **/
-    private List<Boolean> getAcyclicNodes(){ //                                                    [Function RT: O(V)]
-        List<Boolean> acyclicNodes = new ArrayList<>();
-        for (int node = 0; node < size(); node++) //                                                        [RT: O(V)]
-            // node is acyclic if it does not contain at least one incoming edge and at least one outgoing edge
-            if (getIncomingEdges(node).size() * outgoingEdges.get(node).size() == 0) //                     [RT: O(1)]
-                acyclicNodes.add(true); // node is acyclic                                                  [RT: O(1)]
-            else
-                acyclicNodes.add(false); // node is not acyclic                                             [RT: O(1)]
-        return acyclicNodes;
-    }
+//    private List<Boolean> getAcyclicNodes(){ //                                                    [Function RT: O(V)]
+//        List<Boolean> acyclicNodes = new ArrayList<>();
+//        for (int node = 0; node < size(); node++) //                                                        [RT: O(V)]
+//            // node is acyclic if it does not contain at least one incoming edge and at least one outgoing edge
+//            if (getIncomingEdges(node).size() * outgoingEdges.get(node).size() == 0) //                     [RT: O(1)]
+//                acyclicNodes.add(true); // node is acyclic                                                  [RT: O(1)]
+//            else
+//                acyclicNodes.add(false); // node is not acyclic                                             [RT: O(1)]
+//
+//        return acyclicNodes;
+//    }
 }
