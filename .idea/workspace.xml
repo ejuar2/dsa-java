@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9796f52-db10-4f76-b3a4-db8b2d0a3f8e" name="Changes" comment="Edited HW2 AutocompleteHW">
+    <list default="true" id="b9796f52-db10-4f76-b3a4-db8b2d0a3f8e" name="Changes" comment="Updated gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/emory/cs/graph/span/MSTPrim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/emory/cs/graph/span/MSTPrim.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/emory/cs/graph/span/SpanningTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/emory/cs/graph/span/SpanningTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/emory/cs/trie/autocomplete/AutocompleteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/emory/cs/trie/autocomplete/AutocompleteTest.java" afterDir="false" />
     </list>
+    <list id="6a55932e-82ea-4cfa-9cc5-b368932442fc" name="Changes by Ben" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,15 +68,17 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Eric/IdeaProjects/dsa-java/src/test/java/edu/emory/cs/trie/autocomplete&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -96,6 +96,7 @@
       <recent name="C:\Users\Eric\IdeaProjects\dsa-java\src\main\java\edu\emory\cs\sort\hybrid\data" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.emory.cs.graph.span" />
       <recent name="edu.emory.cs.trie.autocomplete" />
       <recent name="edu.emory.cs.set" />
       <recent name="edu.emory.cs.sort.hybrid" />
@@ -139,29 +140,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;edu.emory.cs.graph.GraphQuizTest.testQuiz0&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="GraphQuizTest.testQuiz1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;edu.emory.cs.graph.GraphQuizTest.testQuiz1&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -217,13 +195,36 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="MSTAllHWTest.testCompleteGraphs" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;edu.emory.cs.graph.span.MSTAllHWTest.testCompleteGraphs&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.MSTAllHWTest.testCompleteGraphs" />
         <item itemvalue="Gradle.GraphQuizTest.testQuiz" />
         <item itemvalue="Gradle.GraphQuizTest.testQuiz0" />
         <item itemvalue="Gradle.GraphQuizTest.testQuiz3" />
         <item itemvalue="Gradle.GraphQuizTest.testQuiz2" />
-        <item itemvalue="Gradle.GraphQuizTest.testQuiz1" />
       </list>
     </recent_temporary>
   </component>
@@ -290,7 +291,22 @@
       <workItem from="1681017345646" duration="624000" />
       <workItem from="1681109820549" duration="7052000" />
       <workItem from="1681426280855" duration="12726000" />
-      <workItem from="1681501530632" duration="1618000" />
+      <workItem from="1681501530632" duration="2016000" />
+      <workItem from="1681595201600" duration="4088000" />
+      <workItem from="1681616001712" duration="886000" />
+      <workItem from="1681617447894" duration="8977000" />
+      <workItem from="1681672796576" duration="3554000" />
+      <workItem from="1681677790652" duration="26240000" />
+      <workItem from="1681782375801" duration="4000" />
+      <workItem from="1681837641823" duration="9968000" />
+      <workItem from="1681865436159" duration="3000" />
+      <workItem from="1681866680685" duration="736000" />
+      <workItem from="1681946684599" duration="728000" />
+      <workItem from="1682077276696" duration="14836000" />
+      <workItem from="1682176972666" duration="27235000" />
+      <workItem from="1682380928421" duration="17000" />
+      <workItem from="1682397626985" duration="6000" />
+      <workItem from="1682460175368" duration="719000" />
     </task>
     <task id="LOCAL-00001" summary="Quiz 2: Priority Queues">
       <created>1676302334920</created>
@@ -404,7 +420,49 @@
       <option name="project" value="LOCAL" />
       <updated>1681503145515</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Edited HW2 AutocompleteHW">
+      <created>1681503166818</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1681503166818</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Edited HW2 AutocompleteHW to trim whitespaces in getCandidates">
+      <created>1681946806695</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1681946806696</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Added network flow lesson &quot;graph/flow&quot; that contains:&#10;MaxFlow, FordFulkerson, and NetworkFlowQuiz">
+      <created>1682089202555</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1682089202555</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Completed algorithm for finding all minimum spanning trees of a graph">
+      <created>1682348463322</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1682348463322</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Updated graph quiz with stream methods">
+      <created>1682460484406</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1682460484406</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Updated gitignore">
+      <created>1682460614676</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1682460614676</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -437,7 +495,12 @@
     <MESSAGE value="Corrected comment in GraphQuiz" />
     <MESSAGE value="Added 11 files for chapter 8 spanning trees" />
     <MESSAGE value="Edited HW2 AutocompleteHW" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited HW2 AutocompleteHW" />
+    <MESSAGE value="Edited HW2 AutocompleteHW to trim whitespaces in getCandidates" />
+    <MESSAGE value="Added network flow lesson &quot;graph/flow&quot; that contains:&#10;MaxFlow, FordFulkerson, and NetworkFlowQuiz" />
+    <MESSAGE value="Completed algorithm for finding all minimum spanning trees of a graph" />
+    <MESSAGE value="Updated graph quiz with stream methods" />
+    <MESSAGE value="Updated gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
